@@ -1,0 +1,64 @@
+$background_color: rgb(61, 60, 60);
+$tile_color: rgb(81, 82, 82);
+$tile_size: 3rem;
+$gap_size: $tile_size/3;
+$font_size: 2rem;
+$row_count: 6;
+$column_count: 4; 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $background_color;
+  color: aliceblue;
+  font-size: $font_size;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-family:Arial, Helvetica, sans-serif
+}
+
+.phone-wrapper{
+  &::before, &::after {
+    display: block;
+    content: '';
+    height: .7rem;
+    width: 100%;
+    background-color: black;
+    
+  }
+
+  &::before{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  &::after{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}
+
+.phone-main{
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat($column_count, $tile_size);
+  grid-template-rows: repeat($row_count, $tile_size);
+  gap: $gap_size;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  border: .2rem solid black;
+}
+.tile{
+  background-color: $tile_color;
+  border-radius: .4rem ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
