@@ -2,6 +2,8 @@ $background_color: rgb(61, 60, 60);
 $tile_color: rgb(81, 82, 82);
 $tile_size: 3rem;
 $gap_size: $tile_size/3;
+$column_gap: $gap_size;
+$row_gap: $gap_size*1.3;
 $font_size: 2rem;
 $row_count: 6;
 $column_count: 4; 
@@ -12,7 +14,7 @@ $column_count: 4;
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body{
   background-color: $background_color;
   color: aliceblue;
@@ -50,7 +52,9 @@ body{
   display: grid;
   grid-template-columns: repeat($column_count, $tile_size);
   grid-template-rows: repeat($row_count, $tile_size);
-  gap: $gap_size;
+ 
+  row-gap: $row_gap;
+  column-gap: $column_gap;
   background-image: url(../images/background.jpg);
   background-size: cover;
   border: .2rem solid black;
@@ -61,4 +65,13 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  .title{
+    font-size: 0.3em;
+    text-transform: capitalize;
+    position: absolute;
+    bottom:  -0.8rem;
+
+  }
 }
